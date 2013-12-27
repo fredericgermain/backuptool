@@ -1,0 +1,9 @@
+reindex
+/c/Python27/python.exe backuptool.py -p d:\\backups\\latest -i | tee update.txt
+
+copy unsync files to base with mapping
+/c/Python27/python.exe backuptool.py -p d:\\backups\\latest -m c:\\Documents\ and\ Settings\\Paul-Antoine\\Mes\ Documents --match-map Paul-Antoine\\Documents> match.txt
+
+
+
+
