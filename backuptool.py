@@ -151,7 +151,10 @@ class Repository:
 					print "no match %s" % (path_from_base)
 				else:
 					print "no match %s -> %s" % (path_from_base, os.path.join(matchcontext.mappath, path_from_base))
-					mycopyfile(path, os.path.join(self.basepath, matchcontext.mappath, path_from_base))
+					if os.path.isfile(os.path.join(self.basepath, matchcontext.mappath, path_from_base)) and False:
+						print "  no copy because already existing file"
+					else:
+						mycopyfile(path, os.path.join(self.basepath, matchcontext.mappath, path_from_base))
 
 		elif os.path.isdir(path):
 			self.match_directory(matchcontext, path)
